@@ -1,13 +1,27 @@
 import React, { Component } from "react";
+import ColorBox from "./ColorBox";
+import style from "./PalettesCSS.module.css";
 
-export interface PalettesProps {}
+type PalettesProps = {
+  paletteName: string;
+  id: string;
+  emoji: string;
+  colors: {
+    name: string;
+    color: string;
+  }[];
+};
+[];
 
-export interface PalettesState {}
-
-class Palettes extends Component<PalettesProps, PalettesState> {
-  render() {
-    return <div>Verify the Palettes</div>;
-  }
-}
+const Palettes = ({ paletteName, colors, id }: PalettesProps) => {
+  const colorBox = colors.map((color) => (
+    <ColorBox color={color.color} name={color.name} key={color.name} />
+  ));
+  return (
+    <div className={style.Palette}>
+      <div className={style.PaletteColors}>{colorBox}</div>
+    </div>
+  );
+};
 
 export default Palettes;
