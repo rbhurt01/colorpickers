@@ -6,7 +6,7 @@ export interface PalettesState {}
 
 class Palettes extends Component<PalettesProps, PalettesState> {
   render() {
-    return <div>checking the Palettes</div>;
+    return <div>Verify the Palettes</div>;
   }
 }
 
